@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Test-Material-2
+  m_Name: Ripple-Material-1
   m_Shader: {fileID: -6465566751694194690, guid: 5843b42467298174f8d61b5bbf84e121, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -67,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _RippleCounter: 4
+    - _RippleCounter: 1.3
     - _RippleSpeed: 1
     - _RippleStrength: 1
     - _ZWrite: 0

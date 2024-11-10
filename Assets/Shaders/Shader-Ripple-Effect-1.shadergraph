@@ -1546,7 +1546,7 @@
     "m_ObjectId": "5dd6e68ce18b48809b58390d6a7f6042",
     "m_Title": "Ripple Speed",
     "m_Position": {
-        "x": -945.0,
+        "x": -944.9999389648438,
         "y": -108.0
     }
 }
@@ -2178,8 +2178,8 @@
     "m_ObjectId": "928247c638f449faa9d8e446f20d3d27",
     "m_Title": "Ripple Center",
     "m_Position": {
-        "x": -1269.0,
-        "y": 292.00006103515627
+        "x": -1268.9998779296875,
+        "y": 292.0
     }
 }
 
@@ -2467,7 +2467,7 @@
     "m_ObjectId": "c424cbcf62d546c2b6b18b7ac3f88f70",
     "m_Title": "Ripple creation using Sine and adjusting strength",
     "m_Position": {
-        "x": -258.0,
+        "x": -257.99993896484377,
         "y": 98.0
     }
 }
