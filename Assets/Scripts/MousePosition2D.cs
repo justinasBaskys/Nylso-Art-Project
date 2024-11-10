@@ -1,22 +1,22 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
 public class MousePosition2D : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
-    
+
+    public Vector3 mouseWorldPosition;
+
+
     void Update()
     {
-        
         Vector3 mouseScreenPosition = Input.mousePosition;
-        mouseScreenPosition.z = -mainCamera.transform.position.z; // Set z to the distance to the 2D plane
+        mouseScreenPosition.z = -mainCamera.transform.position.z;
 
-        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
-        mouseWorldPosition.z = 0f; // Ensure z is zero for 2D
+        mouseWorldPosition = mainCamera.ScreenToWorldPoint(mouseScreenPosition);
+        mouseWorldPosition.z = 0f; 
 
         transform.position = mouseWorldPosition;
 
-        Debug.Log(mouseWorldPosition);
+        //Debug.Log(mouseWorldPosition);
     }
 }
