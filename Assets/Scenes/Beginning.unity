@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 738152289}
   - component: {fileID: 738152292}
   - component: {fileID: 738152294}
+  - component: {fileID: 738152295}
   m_Layer: 0
   m_Name: Sprite-Cursor-1
   m_TagString: Untagged
@@ -413,7 +414,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4084a843b9ef6af45a63b7163f9fbefb, type: 2}
+  - {fileID: 2100000, guid: d208020f217879f48bb5ff1cbeddbfe4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -431,10 +432,10 @@ TrailRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 822832311
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -443,25 +444,43 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.18674919
-        value: 0
-        inSlope: 0.44986445
-        outSlope: 0.44986445
+        time: 0
+        value: 0.022027358
+        inSlope: 5.4394374
+        outSlope: 5.4394374
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.24848486
+        outWeight: 0.10100231
       - serializedVersion: 3
-        time: 0.36801642
-        value: 0.09726375
-        inSlope: -0.22701119
-        outSlope: -0.22701119
+        time: 0.12054445
+        value: 0.4560166
+        inSlope: 0.8723516
+        outSlope: 0.8723516
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.60715014
+        outWeight: 0.3038775
       - serializedVersion: 3
-        time: 0.84336853
+        time: 0.35764045
+        value: 0.5186505
+        inSlope: -0.06877536
+        outSlope: -0.06877536
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.19611964
+      - serializedVersion: 3
+        time: 0.8078018
+        value: 0.17610484
+        inSlope: -1.3224661
+        outSlope: -1.3224661
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.114412576
+        outWeight: 0.32168788
+      - serializedVersion: 3
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -582,6 +601,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 919a936bfe3a73a4bbb3dad8533c3903, type: 2}
+--- !u!114 &738152295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738152288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af98e2a426e92cc41a957c95491acfa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distortionMaterial: {fileID: 2100000, guid: 6478df920688d4a42be397c5f57d4c4a, type: 2}
 --- !u!1 &815669557
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +700,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 919a936bfe3a73a4bbb3dad8533c3903, type: 2}
+  - {fileID: 2100000, guid: 6478df920688d4a42be397c5f57d4c4a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1051,9 +1083,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 738152291}
-  - {fileID: 1352025821}
   - {fileID: 9045165190315686681}
   - {fileID: 815669559}
   - {fileID: 1838804335}
   - {fileID: 2027427104}
+  - {fileID: 738152291}
+  - {fileID: 1352025821}

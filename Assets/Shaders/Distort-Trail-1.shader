@@ -1,15 +1,16 @@
-Shader "Custom/MouseDistortion"
+Shader "Custom/TrailDistortion"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _MousePos ("Mouse Position", Vector) = (0, 0, 0, 0)
         _DistortionRadius ("Distortion Radius", Float) = 0.1
         _DistortionStrength ("Distortion Strength", Float) = 0.05
         _SpinSpeed ("Spin Speed", Float) = 1.0
         _NoiseFrequency ("Noise Frequency", Float) = 1.0
         _NoiseAmplitude ("Noise Amplitude", Float) = 0.02
         _MaxRotationAngle ("Max Rotation Angle (radians)", Float) = 0.2
+        _TrailPoints ("Trail Points", Vector) = (0, 0, 0, 0)
+        _NumTrailPoints ("Number of Trail Points", Float) = 0
     }
     SubShader
     {
@@ -33,13 +34,14 @@ Shader "Custom/MouseDistortion"
             };
 
             sampler2D _MainTex;
-            float4 _MousePos;
             float _DistortionRadius;
             float _DistortionStrength;
             float _SpinSpeed;
             float _NoiseFrequency;
             float _NoiseAmplitude;
             float _MaxRotationAngle;
+            float4 _TrailPoints[64];
+            int _NumTrailPoints;
 
             v2f vert (appdata v)
             {
@@ -73,36 +75,34 @@ Shader "Custom/MouseDistortion"
             fixed4 frag (v2f i) : SV_Target
             {
                 float2 uv = i.uv;
-                float2 mouseUV = _MousePos.xy;
+                float2 totalDistortion = float2(0.0, 0.0);
+                float alphaFactor = 0.0;
 
-                float dist = distance(uv, mouseUV);
-
-                // Initialize alpha factor for the fall-off effect
-                float alphaFactor = 1;
-
-                if (dist < _DistortionRadius)
+                for (int j = 0; j < _NumTrailPoints; j++)
                 {
-                    // Calculate the distortion strength with a smooth alpha fall-off
-                    float distortionFactor = 1.0 - (dist / _DistortionRadius);
-                    alphaFactor = distortionFactor; // The alpha falls off as the distance increases
+                    float2 trailPoint = _TrailPoints[j].xy;
+                    float dist = distance(uv, trailPoint);
 
-                    float noiseValue = noise(uv) * _NoiseAmplitude;
-                    float rotationAngle = (_SpinSpeed + noiseValue) * distortionFactor * _Time.y;
+                    if (dist < _DistortionRadius)
+                    {
+                        float distortionFactor = 1.0 - (dist / _DistortionRadius);
+                        alphaFactor = max(alphaFactor, distortionFactor); // Keep the highest alpha factor
 
-                    // Clamp the rotation angle for controlled spinning
-                    rotationAngle = clamp(rotationAngle, -_MaxRotationAngle, _MaxRotationAngle);
+                        float noiseValue = noise(uv) * _NoiseAmplitude;
+                        float rotationAngle = (_SpinSpeed + noiseValue) * distortionFactor * _Time.y;
 
-                    // Apply rotation
-                    uv = RotatePoint(uv, mouseUV, rotationAngle);
+                        // Clamp the rotation angle for controlled spinning
+                        rotationAngle = clamp(rotationAngle, -_MaxRotationAngle, _MaxRotationAngle);
 
-                    // Add positional distortion influenced by the fall-off
-                    uv += (mouseUV - uv) * (distortionFactor + noiseValue) * _DistortionStrength;
+                        // Apply rotation
+                        uv = RotatePoint(uv, trailPoint, rotationAngle);
+
+                        // Add positional distortion influenced by the fall-off
+                        totalDistortion += (trailPoint - uv) * (distortionFactor + noiseValue) * _DistortionStrength;
+                    }
                 }
-                else
-                {
-                    // No distortion outside the radius, alpha falls to zero
-                    alphaFactor = 0.0;
-                }
+
+                uv += totalDistortion;
 
                 fixed4 color = tex2D(_MainTex, uv);
                 color.a *= alphaFactor; // Apply the alpha fall-off to the output color

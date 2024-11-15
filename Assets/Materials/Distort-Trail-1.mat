@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Distort-1
-  m_Shader: {fileID: 4800000, guid: 46f0f88cdc5d3da4b87f9e6b66fa12b1, type: 3}
+  m_Name: Distort-Trail-1
+  m_Shader: {fileID: 4800000, guid: d62e253873bdd4c489b2e45d3020d936, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,19 +41,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionRadius: 0.02
+    - _DistortionRadius: 0.04
     - _DistortionStrength: 0.2
     - _EnableExternalAlpha: 0
-    - _Glossiness: 0.5
     - _MaxRotationAngle: 0
-    - _Metallic: 0
     - _NoiseAmplitude: 0.5
     - _NoiseFrequency: 305.8
+    - _NumTrailPoints: 48
     - _SpinSpeed: 5.03
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MousePos: {r: 0.68676627, g: 1.0693703, b: 0, a: 0}
+    - _MousePos: {r: -0.21398078, g: 1.0309498, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TrailPoints: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
