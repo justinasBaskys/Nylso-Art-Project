@@ -41,14 +41,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionRadius: 0.04
-    - _DistortionStrength: 0.2
+    - _DistortionRadius: 0.02
+    - _DistortionStrength: 0.05
     - _EnableExternalAlpha: 0
     - _MaxRotationAngle: 0
-    - _NoiseAmplitude: 0.5
-    - _NoiseFrequency: 305.8
-    - _NumTrailPoints: 36
-    - _SpinSpeed: 5.03
+    - _NoiseAmplitude: 0.85
+    - _NoiseFrequency: 360.17
+    - _NumTrailPoints: 4
+    - _SpinSpeed: 17.59
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
