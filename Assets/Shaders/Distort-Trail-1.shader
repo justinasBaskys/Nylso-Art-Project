@@ -9,7 +9,6 @@ Shader "Custom/TrailDistortion"
         _NoiseFrequency ("Noise Frequency", Float) = 1.0
         _NoiseAmplitude ("Noise Amplitude", Float) = 0.02
         _MaxRotationAngle ("Max Rotation Angle (radians)", Float) = 0.2
-        _TrailPoints ("Trail Points", Vector) = (0, 0, 0, 0)
         _NumTrailPoints ("Number of Trail Points", Float) = 0
     }
     SubShader
@@ -40,8 +39,8 @@ Shader "Custom/TrailDistortion"
             float _NoiseFrequency;
             float _NoiseAmplitude;
             float _MaxRotationAngle;
-            float4 _TrailPoints[64];
-            int _NumTrailPoints;
+            float4 _TrailPoints[128]; // Updated to 128 to match the maximum expected array size
+            float _NumTrailPoints;
 
             v2f vert (appdata v)
             {
@@ -78,6 +77,7 @@ Shader "Custom/TrailDistortion"
                 float2 totalDistortion = float2(0.0, 0.0);
                 float alphaFactor = 0.0;
 
+                // Loop through all trail points and apply distortion
                 for (int j = 0; j < _NumTrailPoints; j++)
                 {
                     float2 trailPoint = _TrailPoints[j].xy;

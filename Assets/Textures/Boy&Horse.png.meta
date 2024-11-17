@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boy&Horse_0: 7859214777153165772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
