@@ -7,7 +7,7 @@ public class TrailDistortion : MonoBehaviour
     private Vector4[] trailPoints;
 
     // Maximum number of points to pass to the shader
-    private const int MaxTrailPoints = 64;
+    private const int MaxTrailPoints = 128;
 
     void Start()
     {

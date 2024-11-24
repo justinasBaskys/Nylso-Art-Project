@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Distort-Trail-1
-  m_Shader: {fileID: 4800000, guid: d62e253873bdd4c489b2e45d3020d936, type: 3}
+  m_Name: Distort-Trail-More-Grass-1
+  m_Shader: {fileID: 4800000, guid: 1ac12c2462265934ea4d0ca1586fb15e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,24 +41,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaFactor: 0
-    - _DecayTime: 1
-    - _DistortionRadius: 0.023
-    - _DistortionStrength: 0.032
-    - _Duration: 10
+    - _DistortionRadius: 0.03
+    - _DistortionStrength: 0.02
     - _EnableExternalAlpha: 0
-    - _FadeDuration: 0.5
-    - _MagneticPullStrength: 0
-    - _MaxRotationAngle: 0.045
-    - _NoiseAmplitude: 0.11
-    - _NoiseFrequency: 133.3
-    - _NumTrailPoints: 13
-    - _SpinSpeed: 136.8
+    - _MagneticPullStrength: 0.002
+    - _MaxRotationAngle: 0.025
+    - _NoiseAmplitude: 0.2
+    - _NoiseFrequency: 144.48
+    - _NumTrailPoints: 40
+    - _SpinSpeed: 0.15
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MousePos: {r: -0.21398078, g: 1.0309498, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TrailPoints: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

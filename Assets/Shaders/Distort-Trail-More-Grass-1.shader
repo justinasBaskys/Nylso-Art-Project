@@ -1,4 +1,4 @@
-Shader "Shaders/TrailDistortion"
+Shader "Shaders/TrailDistortionMoreGrass"
 {
     Properties
     {
@@ -11,6 +11,7 @@ Shader "Shaders/TrailDistortion"
         _MaxRotationAngle ("Max Rotation Angle (radians)", Float) = 0.01
         _NumTrailPoints ("Number of Trail Points", Float) = 0
         _MagneticPullStrength ("Magnetic Pull Strength", Float) = 0.002
+        _MaskTex ("Mask Texture", 2D) = "white" {}
     }
     SubShader
     {
@@ -37,7 +38,7 @@ Shader "Shaders/TrailDistortion"
             };
 
             sampler2D _MainTex;
-            
+            sampler2D _MaskTex; // Mask texture
             float _DistortionRadius;
             float _DistortionStrength;
             float _SpinSpeed;
@@ -125,6 +126,28 @@ Shader "Shaders/TrailDistortion"
                 float2 totalDistortion = float2(0.0, 0.0);
 
                 fixed4 color = tex2D(_MainTex, uv);
+                float maskValue = tex2D(_MaskTex, uv); // Use red channel for the mask
+                if (maskValue < 0.5)
+                {
+                    
+                    return tex2D(_MainTex, uv);
+                }
+                if (maskValue < 0.5)
+                {
+                    
+                    return tex2D(_MainTex, uv);
+                }
+                if (maskValue < 0.5)
+                {
+                    
+                    return tex2D(_MainTex, uv);
+                }
+                if (maskValue < 0.5)
+                {
+                    
+                    return tex2D(_MainTex, uv);
+                }
+
 
                 for (int j = 0; j < _NumTrailPoints; j++)
                 {
