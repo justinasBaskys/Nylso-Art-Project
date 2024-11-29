@@ -127,9 +127,18 @@ Shader "Shaders/TrailDistortionMoreGrass"
 
                 fixed4 color = tex2D(_MainTex, uv);
                 float maskValue = tex2D(_MaskTex, uv); // Use red channel for the mask
+                
+                //Add more if statements if you want more grass
                 if (maskValue < 0.5)
                 {
-                    
+                    return tex2D(_MainTex, uv);
+                }
+                if (maskValue < 0.5)
+                {
+                    return tex2D(_MainTex, uv);
+                }
+                if (maskValue < 0.5)
+                {
                     return tex2D(_MainTex, uv);
                 }
                 

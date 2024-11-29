@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af98e2a426e92cc41a957c95491acfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distortionMaterial: {fileID: 2100000, guid: 6478df920688d4a42be397c5f57d4c4a, type: 2}
+  distortionMaterial: {fileID: 2100000, guid: 704cefe5d9d04a142a1c78327e71f76a, type: 2}
 --- !u!1 &815669557
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6478df920688d4a42be397c5f57d4c4a, type: 2}
+  - {fileID: 2100000, guid: 704cefe5d9d04a142a1c78327e71f76a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
