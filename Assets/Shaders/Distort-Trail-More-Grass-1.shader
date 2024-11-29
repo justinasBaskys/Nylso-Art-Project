@@ -16,7 +16,7 @@ Shader "Shaders/TrailDistortionMoreGrass"
     SubShader
     {
         Tags { "RenderType"="Transparent" }
-        LOD  100
+        
         Pass
         {
             Blend SrcAlpha OneMinusSrcAlpha // Enable transparency
@@ -132,21 +132,7 @@ Shader "Shaders/TrailDistortionMoreGrass"
                     
                     return tex2D(_MainTex, uv);
                 }
-                if (maskValue < 0.5)
-                {
-                    
-                    return tex2D(_MainTex, uv);
-                }
-                if (maskValue < 0.5)
-                {
-                    
-                    return tex2D(_MainTex, uv);
-                }
-                if (maskValue < 0.5)
-                {
-                    
-                    return tex2D(_MainTex, uv);
-                }
+                
 
 
                 for (int j = 0; j < _NumTrailPoints; j++)

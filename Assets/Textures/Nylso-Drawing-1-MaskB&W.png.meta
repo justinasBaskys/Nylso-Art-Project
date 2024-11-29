@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 502c7d40d4834314c91882db6ab0522a
+guid: 1f68ae37296a8fb4487aebffa3605816
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5458283368280106240
-    second: Nylso-Drawing-1-Mask_0
+      213: 8369422639820888218
+    second: Nylso-Drawing-1-MaskB&W_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nylso-Drawing-1-Mask_0
+      name: Nylso-Drawing-1-MaskB&W_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00bdd3e12384044b0800000000000000
-      internalID: -5458283368280106240
+      spriteID: a98d2ad3c89262470800000000000000
+      internalID: 8369422639820888218
       vertices: []
       indices: 
       edges: []

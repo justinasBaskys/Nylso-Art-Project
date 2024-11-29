@@ -3,6 +3,7 @@ Shader "Shaders/TrailDistortion"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _AoEMask ("AoE Mask", 2D) = "white" {} // New AoE mask texture
         _DistortionRadius ("Distortion Radius", Float) = 0.025
         _DistortionStrength ("Distortion Strength", Float) = 0.01
         _SpinSpeed ("Spin Speed", Float) = 0.15
@@ -15,7 +16,7 @@ Shader "Shaders/TrailDistortion"
     SubShader
     {
         Tags { "RenderType"="Transparent" }
-        LOD  100
+        LOD 100
         Pass
         {
             Blend SrcAlpha OneMinusSrcAlpha // Enable transparency
@@ -37,14 +38,15 @@ Shader "Shaders/TrailDistortion"
             };
 
             sampler2D _MainTex;
-            
+            sampler2D _AoEMask; // New AoE mask sampler
+
             float _DistortionRadius;
             float _DistortionStrength;
             float _SpinSpeed;
             float _NoiseFrequency;
             float _NoiseAmplitude;
             float _MaxRotationAngle;
-            float4 _TrailPoints[128]; // x, y position;
+            float4 _TrailPoints[128];
             float _NumTrailPoints;
             float _MagneticPullStrength;
 
@@ -87,7 +89,7 @@ Shader "Shaders/TrailDistortion"
                 return direction * _MagneticPullStrength * distortionFactor;
             }
 
-            // Noise-Based Perturbation (Perturbation offsets the shape of the shader into random directions thanks to noise)
+            // Noise-Based Perturbation
             float2 ApplyNoisePerturbation(float2 uv, float2 trailPoint, float distortionFactor)
             {
                 float2 randomOffset = float2(
@@ -104,6 +106,7 @@ Shader "Shaders/TrailDistortion"
                 rotationAngle = clamp(rotationAngle, -_MaxRotationAngle, _MaxRotationAngle);
                 return RotatePoint(uv, center, rotationAngle);
             }
+
             float CustomFalloff(float distance, float radius)
             {
                 return pow(1.0 - saturate(distance / radius), 3.0); // Power-based falloff
@@ -123,9 +126,16 @@ Shader "Shaders/TrailDistortion"
             {
                 float2 uv = i.uv;
                 float2 totalDistortion = float2(0.0, 0.0);
-
                 fixed4 color = tex2D(_MainTex, uv);
 
+                // Sample the AoE mask
+                float aoeMaskValue = tex2D(_AoEMask, uv).r; // Use the red channel of the mask
+                if (aoeMaskValue <= 0.0) // Skip distortion if mask value is 0
+                {
+                    return color;
+                }
+
+                // Iterate through trail points
                 for (int j = 0; j < _NumTrailPoints; j++)
                 {
                     float2 trailPoint = _TrailPoints[j].xy;
@@ -137,7 +147,7 @@ Shader "Shaders/TrailDistortion"
                     float dist = distance(uv, trailPoint);
                     if (dist < scaledRadius)
                     {
-                        float distortionFactor = CustomFalloff(dist, scaledRadius);
+                        float distortionFactor = CustomFalloff(dist, scaledRadius) * aoeMaskValue; // Scale by AoE mask
 
                         // Magnetic pull
                         float2 magneticPull = float2(0.0, 0.0);
