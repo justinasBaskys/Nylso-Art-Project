@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Grass-Movement-1
-  m_Shader: {fileID: -6465566751694194690, guid: dce1582f293a1ee41a560f85a0a3d2ff, type: 3}
+  m_Name: More-Grass-Experiment
+  m_Shader: {fileID: 4800000, guid: ef61d53172764fc41a9a72ff5a1e8916, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -27,53 +27,40 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _AoEMask:
+        m_Texture: {fileID: 2800000, guid: 1f68ae37296a8fb4487aebffa3605816, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex1:
+        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_2d61041f8dfd46289cb8aafd27290417: 1
-    - Vector1_620eb0a4fc1a48c79d9daecb584075d4: 5
-    - Vector1_e19a6f73e9824493998ba7bebae9c03c: 0
+    - _DistortionRadius: 0.025
+    - _DistortionStrength: 0.02
     - _EnableExternalAlpha: 0
+    - _MagneticPullStrength: 0.003
+    - _MaxRotationAngle: 0.02
+    - _NoiseAmplitude: 2
+    - _NoiseFrequency: 242.6
+    - _NumTrailPoints: 2
+    - _SpinSpeed: 2.68
     - _ZWrite: 0
     m_Colors:
-    - Vector2_2ad9dffd23234809bbb6d55338af2214: {r: 0.07, g: 0.04, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &8668386626745476433
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 9

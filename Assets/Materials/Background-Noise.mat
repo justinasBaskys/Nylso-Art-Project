@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Distort-Trail-1
-  m_Shader: {fileID: 4800000, guid: d62e253873bdd4c489b2e45d3020d936, type: 3}
+  m_Name: Background-Noise
+  m_Shader: {fileID: 4800000, guid: a344a5f3b3525fc488e457ab4b2036e6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,40 +36,33 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: dfe4468e68d0f164da4dc05e16af9483, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex1:
+        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SecondTex:
-        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaFactor: 0
-    - _DecayTime: 1
-    - _DisplacementNoiseStrength: 0.005
-    - _DistortionRadius: 0.41
-    - _DistortionStrength: 0.032
-    - _DoublingStrength: 0.005
-    - _Duration: 10
+    - _DistortionRadius: 0.118234426
+    - _DistortionStrength: 0.01
     - _EnableExternalAlpha: 0
-    - _FadeDuration: 0.5
-    - _MagneticPullStrength: 0
-    - _MaxRotationAngle: 0.045
-    - _NoiseAmplitude: 0.11
-    - _NoiseFrequency: 133.3
+    - _MagneticPullStrength: 0.002
+    - _MaxRotationAngle: 0.01
+    - _NoiseAmplitude: 0.7
+    - _NoiseFrequency: 242.6
+    - _NumPoints: 4
     - _NumTrailPoints: 0
-    - _SecondTexOffset: 0.01
-    - _SpinSpeed: 136.8
+    - _Speed: 19.22
+    - _SpinSpeed: 0.15
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _MousePos: {r: -0.21398078, g: 1.0309498, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TrailPoints: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

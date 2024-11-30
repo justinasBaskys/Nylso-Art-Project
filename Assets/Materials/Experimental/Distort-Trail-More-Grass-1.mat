@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AoEMask:
-        m_Texture: {fileID: 2800000, guid: 502c7d40d4834314c91882db6ab0522a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -45,15 +45,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionRadius: 0.045
+    - _DistortionRadius: 0.035
     - _DistortionStrength: 0.25
     - _EnableExternalAlpha: 0
     - _MagneticPullStrength: 0
-    - _MaxRotationAngle: 0.015
-    - _NoiseAmplitude: 0.6
-    - _NoiseFrequency: 95.2
-    - _NumTrailPoints: 5
-    - _SpinSpeed: 6.41
+    - _MaxRotationAngle: 0.025
+    - _NoiseAmplitude: 0.4
+    - _NoiseFrequency: 675
+    - _NumTrailPoints: 26
+    - _SpinSpeed: 168.85
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

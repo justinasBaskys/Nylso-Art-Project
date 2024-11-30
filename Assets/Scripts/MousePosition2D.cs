@@ -17,6 +17,6 @@ public class MousePosition2D : MonoBehaviour
 
         transform.position = mouseWorldPosition;
 
-        //Debug.Log(mouseWorldPosition);
+        Debug.Log(mouseWorldPosition);
     }
 }
