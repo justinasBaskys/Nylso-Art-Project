@@ -62,7 +62,7 @@ Material:
     - _MaxRotationAngle: 0.02
     - _NoiseAmplitude: 0.4
     - _NoiseFrequency: 242.6
-    - _NumTrailPoints: 4
+    - _NumTrailPoints: 1
     - _SpinSpeed: 1.54
     - _ZWrite: 0
     m_Colors:

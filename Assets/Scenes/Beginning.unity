@@ -930,7 +930,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1570640920}
   - component: {fileID: 1570640919}
-  - component: {fileID: 1570640921}
   m_Layer: 0
   m_Name: Background-Preset-Shaders
   m_TagString: Untagged
@@ -951,18 +950,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetMaterial: {fileID: 2100000, guid: db1aa3f10a2164643b23566941d81ce5, type: 2}
-  numPoints: 4
+  numPoints: 13
   points:
+  - {x: 0.545, y: 0.925}
+  - {x: 0.61, y: 0.929}
+  - {x: 0.67, y: 0.908}
+  - {x: 0.18, y: 0.93}
+  - {x: 0.03, y: 0.9}
+  - {x: 0.07, y: 0.82}
+  - {x: 0.03, y: 0.73}
+  - {x: 0, y: 0.61}
+  - {x: 0.022, y: 0.52}
+  - {x: 0.8, y: 0.9}
+  - {x: 0.88, y: 0.92}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  distortionRadius: 0.118234426
-  distortionStrength: 0.01
-  spinSpeed: 0.15
-  noiseFrequency: 242.6
-  noiseAmplitude: 0.7
-  maxRotationAngle: 0.01
 --- !u!4 &1570640920
 Transform:
   m_ObjectHideFlags: 0
@@ -978,20 +980,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1570640921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570640918}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6ae8b6edb427f4d90a49aa3a358dcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shaderPointManager: {fileID: 0}
-  distortionRadiusSlider: {fileID: 0}
 --- !u!1 &1838804333
 GameObject:
   m_ObjectHideFlags: 0
