@@ -1,14 +1,13 @@
-Shader "Shaders/More-Grass-Experiment-Background"
+Shader "Shaders/Consistent-Grass-Background"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _DistortionRadius ("Distortion Radius", Float) = 0.025
-        _DistortionStrength ("Distortion Strength", Float) = 0.01
-        _SpinSpeed ("Spin Speed", Float) = 0.15
-        _NoiseFrequency ("Noise Frequency", Float) = 242.6
-        _NoiseAmplitude ("Noise Amplitude", Float) = 0.7
-        _MaxRotationAngle ("Max Rotation Angle (radians)", Float) = 0.01
+        _DistortionRadius ("Distortion Radius", Float) = 0.084
+        _DistortionStrength ("Distortion Strength", Float) = 0.0291
+        _SpinSpeed ("Spin Speed", Float) = 0.5
+        _NoiseFrequency ("Noise Frequency", Float) = 145
+        _NoiseAmplitude ("Noise Amplitude", Float) = 0.003
         _NumPoints ("Number of Points", Float) = 0
     }
     SubShader
@@ -42,14 +41,14 @@ Shader "Shaders/More-Grass-Experiment-Background"
             float _SpinSpeed;
             float _NoiseFrequency;
             float _NoiseAmplitude;
-            float _MaxRotationAngle;
-            float4 _Points[128]; // Preset points for distortion
+            float4 _Points[128];
             float _NumPoints;
 
-            // Noise function
-            float noise(float2 pos)
+            // Smoothed noise for random offset generation
+            float SmoothNoise(float2 pos)
             {
-                return sin(pos.x * _NoiseFrequency + _Time.y) * cos(pos.y * _NoiseFrequency + _Time.z);
+                float n = sin(dot(pos.xy, float2(12.9898, 78.233)) * _NoiseFrequency);
+                return 0.5 + 0.5 * sin(n + _Time.y); // Smoothed oscillation between 0 and 1
             }
 
             // Rotation function
@@ -67,7 +66,7 @@ Shader "Shaders/More-Grass-Experiment-Background"
             // Custom falloff function
             float CustomFalloff(float distance, float radius)
             {
-                return pow(1.0 - saturate(distance / radius), 3.0);
+                return pow(1.0 - saturate(distance / radius), 2.0);
             }
 
             // Vertex shader
@@ -86,33 +85,37 @@ Shader "Shaders/More-Grass-Experiment-Background"
                 fixed4 color = tex2D(_MainTex, uv);
 
                 float2 totalDistortion = float2(0.0, 0.0);
+                float time = _Time.y * 0.5; // Moderate time multiplier
 
-                // Iterate through preset points
                 for (int j = 0; j < _NumPoints; j++)
                 {
-                    float2 currPoint = _Points[j].xy; // Use only the xy of the float4
+                    float2 currPoint = _Points[j].xy;
                     float dist = distance(uv, currPoint);
 
                     if (dist < _DistortionRadius)
                     {
                         float distortionFactor = CustomFalloff(dist, _DistortionRadius);
 
-                        // Noise-based perturbation
-                        float noiseValue = noise(uv) * _NoiseAmplitude;
+                        // Generate smooth random offsets
+                        float randomOffsetX = (SmoothNoise(currPoint + float2(1.0, 0.0)) - 0.5) * _NoiseAmplitude;
+                        float randomOffsetY = (SmoothNoise(currPoint + float2(0.0, 1.0)) - 0.5) * _NoiseAmplitude;
 
-                        // Apply rotation
-                        uv = RotatePoint(uv, currPoint, (_SpinSpeed + noiseValue) * distortionFactor * _Time.y);
+                        // Combine random offsets into a displacement vector
+                        float2 randomOffset = float2(randomOffsetX, randomOffsetY);
 
-                        // Combine effects
+                        // Apply dynamic rotation
+                        float rotationAngle = _SpinSpeed * distortionFactor * sin(time);
+
+                        // Rotate UV with additional random offset
+                        uv = RotatePoint(uv + randomOffset, currPoint, rotationAngle);
+
+                        // Accumulate distortion effects
                         totalDistortion += (currPoint - uv) * distortionFactor * _DistortionStrength;
                     }
                 }
 
                 uv += totalDistortion;
-
-                // Final texture sampling
                 color = tex2D(_MainTex, uv);
-
                 return color;
             }
             ENDCG
