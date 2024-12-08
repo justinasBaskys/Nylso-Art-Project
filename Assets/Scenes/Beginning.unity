@@ -168,7 +168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &258570933
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -473,7 +473,6 @@ GameObject:
   - component: {fileID: 738152289}
   - component: {fileID: 738152295}
   - component: {fileID: 738152292}
-  - component: {fileID: 738152294}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -708,19 +707,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &738152294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738152288}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5cf47095c937af4caa422a75c4509ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 919a936bfe3a73a4bbb3dad8533c3903, type: 2}
 --- !u!114 &738152295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af98e2a426e92cc41a957c95491acfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distortionMaterial: {fileID: 2100000, guid: 664a45ff9a5b005418d4950131d633ac, type: 2}
+  distortionMaterial: {fileID: 2100000, guid: 19fb5e411211f8548b706ecd473c0567, type: 2}
 --- !u!1 &815669557
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1352025820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -873,7 +859,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 664a45ff9a5b005418d4950131d633ac, type: 2}
+  - {fileID: 2100000, guid: 19fb5e411211f8548b706ecd473c0567, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -936,7 +922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1570640919
 MonoBehaviour:
   m_ObjectHideFlags: 0

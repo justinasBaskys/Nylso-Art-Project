@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: More-Grass-Distortion-Trail
-  m_Shader: {fileID: 4800000, guid: ef61d53172764fc41a9a72ff5a1e8916, type: 3}
+  m_Shader: {fileID: 4800000, guid: d62e253873bdd4c489b2e45d3020d936, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -62,7 +62,7 @@ Material:
     - _MaxRotationAngle: 0.02
     - _NoiseAmplitude: 0.4
     - _NoiseFrequency: 242.6
-    - _NumTrailPoints: 1
+    - _NumTrailPoints: 10
     - _SpinSpeed: 1.54
     - _ZWrite: 0
     m_Colors:

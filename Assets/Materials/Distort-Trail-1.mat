@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Distort-Trail-1
-  m_Shader: {fileID: 4800000, guid: d62e253873bdd4c489b2e45d3020d936, type: 3}
+  m_Shader: {fileID: 4800000, guid: ef61d53172764fc41a9a72ff5a1e8916, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -36,7 +36,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: dfe4468e68d0f164da4dc05e16af9483, type: 3}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex1:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -52,19 +56,19 @@ Material:
     - _AlphaFactor: 0
     - _DecayTime: 1
     - _DisplacementNoiseStrength: 0.005
-    - _DistortionRadius: 0.41
-    - _DistortionStrength: 0.032
+    - _DistortionRadius: 0.035
+    - _DistortionStrength: 0.16
     - _DoublingStrength: 0.005
     - _Duration: 10
     - _EnableExternalAlpha: 0
     - _FadeDuration: 0.5
-    - _MagneticPullStrength: 0
-    - _MaxRotationAngle: 0.045
-    - _NoiseAmplitude: 0.11
-    - _NoiseFrequency: 133.3
-    - _NumTrailPoints: 0
+    - _MagneticPullStrength: 0.005
+    - _MaxRotationAngle: 0.03
+    - _NoiseAmplitude: 5.5
+    - _NoiseFrequency: 142.14
+    - _NumTrailPoints: 10
     - _SecondTexOffset: 0.01
-    - _SpinSpeed: 136.8
+    - _SpinSpeed: 37.29
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
