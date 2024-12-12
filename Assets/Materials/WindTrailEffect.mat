@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: More-Grass-Experiment
-  m_Shader: {fileID: 4800000, guid: ef61d53172764fc41a9a72ff5a1e8916, type: 3}
+  m_Name: WindTrailEffect
+  m_Shader: {fileID: 4800000, guid: 471ec6934357ff942b642cba20cb98c4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -27,12 +27,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _AoEMask:
-        m_Texture: {fileID: 2800000, guid: 1f68ae37296a8fb4487aebffa3605816, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 739cb0fdfaebb9a419bd7c2e67c6600a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -40,15 +36,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex1:
-        m_Texture: {fileID: 2800000, guid: 5a6401b7a3a28dd468986607aa413da2, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 75fb9b5dc128cae4e9dac616316bd254, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -56,26 +48,24 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TrailPositions:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 8400000, guid: 03c75a4b55b278c45a118695fc302815, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionRadius: 0.03
-    - _DistortionStrength: 0.025
+    - _DistortionRadius: 0.46
+    - _DistortionStrength: 0.03
     - _EnableExternalAlpha: 0
-    - _FlowSpeed: 1
-    - _FlowStrength: 0.1
-    - _MagneticPullStrength: 0.003
-    - _MaxRadius: 1
-    - _MaxRotationAngle: 0.02
-    - _NoiseAmplitude: 2
-    - _NoiseFrequency: 242.6
+    - _FlowSpeed: 0.05
+    - _FlowStrength: 0.05
+    - _MaxRadius: 0.5
     - _NumTrailPoints: 0
-    - _SpinSpeed: 2.68
+    - _PointSize: 0.5
     - _ZWrite: 0
     m_Colors:
+    - _Center: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PointPosition: {r: -0.92066586, g: 1.145935, b: 0, a: 0}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrailColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrailPoints: {r: 0, g: 0, b: 0, a: 0}
