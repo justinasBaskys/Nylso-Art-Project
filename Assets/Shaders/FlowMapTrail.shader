@@ -1,4 +1,4 @@
-Shader "Shaders/FlowMapTrail"
+Shader "Shaders/More-Grass-Experiment"
 {
     Properties
     {
@@ -16,7 +16,8 @@ Shader "Shaders/FlowMapTrail"
         _MaskTex1 ("Mask Texture Duplicate", 2D) = "white" {}
         _FlowMap ("Flow Map", 2D) = "white" {}
         _FlowMapStrength ("Flow Map Strength", Float) = 0.5
-        _FlowSpeed ("Flow Speed", Float) = 0.1 // Scrolling speed of the flow map
+        _FlowSpeed ("Flow Speed", Float) = 0.1
+        _FlowCycleTime ("Flow Cycle Time", Float) = 2.0 // Time for one fade-in and fade-out cycle
     }
     SubShader
     {
@@ -59,6 +60,7 @@ Shader "Shaders/FlowMapTrail"
             float _MagneticPullStrength;
             float _FlowMapStrength;
             float _FlowSpeed;
+            float _FlowCycleTime;
 
             // Noise Function
             float noise(float2 pos)
@@ -120,6 +122,14 @@ Shader "Shaders/FlowMapTrail"
             float CustomFalloff(float distance, float radius)
             {
                 return pow(1.0 - saturate(distance / radius), 3.0); // Power-based falloff
+            }
+
+            // Calculate dynamic flow map strength based on a sinusoidal fade cycle
+            float CalculateDynamicFlowStrength()
+            {
+                float cycle = frac(_Time.y / _FlowCycleTime); // Loop from 0 to 1
+                float fade = sin(cycle * 3.14159); // Sinusoidal fade (0 -> 1 -> 0)
+                return fade * _FlowMapStrength;
             }
 
             // Vertex Shader
@@ -193,9 +203,13 @@ Shader "Shaders/FlowMapTrail"
                         uv = ApplyRotation(uv, trailPoint + noisePerturbation, distortionFactor, noiseValue);
 
                         // Scrolling flow map inside the distortion radius
-                        float2 flowUV = uv + _Time.y * _FlowSpeed;
+                        float2 flowUV = uv + float2(_Time.y * _FlowSpeed, _Time.y * _FlowSpeed);
                         float2 flowMapValue = tex2D(_FlowMap, flowUV).rg * 2.0 - 1.0; // Map to [-1, 1]
-                        float2 flowDistortion = flowMapValue * _FlowMapStrength * distortionFactor;
+
+                        // Calculate dynamic flow map strength
+                        float dynamicFlowStrength = CalculateDynamicFlowStrength();
+
+                        float2 flowDistortion = flowMapValue * dynamicFlowStrength * distortionFactor;
 
                         // Combining effects
                         totalDistortion += magneticPull + flowDistortion + (trailPoint - uv) * distortionFactor * _DistortionStrength;
