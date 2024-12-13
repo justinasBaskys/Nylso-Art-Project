@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: abe6ce8367491f64dba1e122e5071e32, type: 3}
+        m_Texture: {fileID: 2800000, guid: 739cb0fdfaebb9a419bd7c2e67c6600a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -53,18 +53,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DistortionRadius: 0.03
-    - _DistortionStrength: 0.01
+    - _DistortionRadius: 0.05
+    - _DistortionStrength: 0.02
     - _EnableExternalAlpha: 0
-    - _FlowCycleTime: 0.8
-    - _FlowMapStrength: 0.0035
-    - _FlowSpeed: 3
-    - _MagneticPullStrength: 0
-    - _MaxRotationAngle: 0.015
-    - _NoiseAmplitude: 0.3
+    - _FlowCycleTime: 1
+    - _FlowMapStrength: 0.007
+    - _FlowSpeed: 17.97
+    - _MagneticPullStrength: 0.003
+    - _MaxRotationAngle: 0
+    - _NoiseAmplitude: 2
     - _NoiseFrequency: 242.6
     - _NumTrailPoints: 0
-    - _SpinSpeed: 0.15
+    - _SpinSpeed: 2.48
+    - _TrailPointLifetime: 0.8
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

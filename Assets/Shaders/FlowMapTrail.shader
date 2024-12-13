@@ -1,4 +1,4 @@
-Shader "Shaders/More-Grass-Experiment"
+Shader "Shaders/FlowMapTrail"
 {
     Properties
     {
